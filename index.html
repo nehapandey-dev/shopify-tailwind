@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Shopify</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          sm: '400px',
+          md: '780px',
+          lg: '980px',
+          xl: '1440px'
+        },
+        extend: {
+          colors: {
+            textcolor: 'text-lime-800',
+            boxcolor: '#1C8D73',
+            clifford: '#da373d',
+            bgccolor: '#012d00',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="sm:bg-orange-50 w-full">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+  <!-- part-1 -->
+  <nav class="bg-orange-50">
+    <section class="navbar pr-16">
+      <div class="w-full text-gray-700 dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: true }"
+          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <img class="lg:w-40 md:w-40 sm:w-20 bg-transprent"
+              src="https://www.smartenergydecisions.com/upload/images/company_images/shopify.png">
+
+            <!-- nav-right -->
+
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Start</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Branding</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Online Presence</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Store Set up</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Guides</a>
+                </div>
+              </div>
+            </div>
+
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Sell</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Online Store</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Ponit Of sell</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Buy Button</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Check out </a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Sales Channels</a>
+                </div>
+              </div>
+            </div>
+
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Market</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Email Marketing</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Marketing Automation</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Customer Groups</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Business chat </a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Facebook Ads </a>
+                </div>
+              </div>
+            </div>
+
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Manage</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Manage Everything</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Ecommerce automation</a>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- nav-left -->
+
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                  clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div :class="{'flex': open, 'hidden': !open}"
+            class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <a class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+              href="#">Pricing</a>
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open"
+                class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Learn</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
+                  class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+
+              <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Help Center</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Blog</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Business Courses</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Guides </a>
+
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Shopify Community</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Free tools</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Podcasts</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Community Events</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Research</a>
+                  <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                    href="#">Log in</a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button @click="open = !open"
+                class="flex flex-row items-center lg:w-full sm:w-32 px-4 py-3 mt-2 text-sm font-semibold text-left bg-emerald-600 rounded-lg  dark-mode:hover:text-white text-white font-bold dark-mode:hover:bg-emerald-900 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white  hover:bg-emerald-900">
+                <span>Try for Free</span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </section>
+
+ <!-- heading-section -->
+
+  <section class="lg:mx-20 sm:mx-5  sm:w-1/7">
+    <div class="lg:flex justify-around gap-10">
+        <div class="lg:flex flex-col lg:w-1/2 sm:inline">
+          <h1 class="lg:text-5xl sm:text-2xl font-bold text-emerald-900 pb-10 sm:pb-5">
+            The easiest way to sell online in India
+          </h1>
+          <p class="lg:text-xl sm:text-md text-gray-500 pb-10">Try one of the most powerful platforms on the market for
+            free. No
+            technical
+            knowledge needed.</p>
+
+<!-- button with placeholder-->
+          <div class="flex items-center pb-7">
+            <div class="relative ">
+              <input type="text"
+                class="border border-black lg:w-72 sm:w-48 text-gray-900 lg:text-md sm:text-xs rounded-lg block p-4 sm:p-4 placeholder-gray-500 "
+                placeholder="Enter your email address" required="">
+            </div>
+
+<!-- button for try -->
+            <button
+              class="flex flex-row items-center px-4 py-4 text-sm font-semibold text-left bg-emerald-600 rounded-lg  dark-mode:hover:text-white text-white font-bold dark-mode:hover:bg-emerald-900 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white  hover:bg-emerald-900">
+              <span>Try for Free</span>
+            </button>
+          </div>
+          <div class="text-xs pb-10">
+            <p>
+              Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive
+              marketing
+              emails from Shopify.
+            </p>
+          </div>
+
+        </div>
+<!-- img- heading -->
+      <div class="lg:w-1/2 lg:mb-5">
+        <img src="https://cdn.shopify.com/mlp/k0t2ghqhamr0k46g7jz5dbfbflcl.jpg?quality=50" alt="">
+      </div>
+    </div>
+  </section>
+
+
+<!-- part2 -->
+    <section class="bg-emerald-900">
+      <div class="heading lg:px-16 sm:px-5 sm:pt-10 text-white">
+        <h1 class="lg:text-5xl sm:text-3xl pb-4">Bring your business online</h1>
+        <p class="pb-4">Create an ecommerce website backed by powerful tools that help you find customers, drive sales,
+          and manage your day-to-day.</p>
+        <p class="font-bold">Explore more examples <span>&#8594;</span></p>
+      </div>
+
+      <div class="mid-part flex justify-around sm:flex-wrap lg:gap-2 lg:pl-10 sm:px-5 mt-16 text-white">
+        <div class="lg:w-48 sm:w-28 pb-10">
+          <img class="pb-12 sm:pb-6"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/blue-tokai/home-example-large-5be147333b5b97176173c550d913fc54bc6e5c3c9e5ecfe9601df2a5a4e400b9.jpg?quality=50">
+          <p>FOOD & DRINK</p>
+          <P>Blue Tokai</P>
+        </div>
+        <div class="lg:w-48 sm:w-28">
+          <img class="pb-12 sm:pb-6"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/quirksmith/home-example-large-36a73df801b2c2edfcd0b16da1097e2927abeefe8f0c06423ea0a321bed4e73b.jpg?quality=50">
+          <p>JWELERY</p>
+          <P>Quirksmith</P>
+        </div>
+        <div class="lg:w-48 sm:w-28">
+          <img class="pb-12 sm:pb-6"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/crossbeats/home-example-large-6a2289a4261faab784468910e7a1b4fef50354bf997446cac7ac85bbc5ec1959.jpg?quality=50">
+          <p>ELECTRONICS</p>
+          <P>Crossbeats</P>
+        </div>
+        <div class="lg:w-48 sm:w-28">
+          <img class="pb-12 sm:pb-6"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/mcaffeine/home-example-large-75bdc7686a50198c0ae2134cb882293b96b5308386a8d7a42fbf8bd0f70f4750.jpg?quality=50">
+          <p>BEAUTY</p>
+          <P>Mcaffeine</P>
+        </div>
+        <div class="lg:w-48 sm:w-28">
+          <img class="pb-12 sm:pb-6"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/bunaai/home-example-large-77e630ba8c116ad0d5a6f359951433dccb0e84b75ee7f23545fe2ff9b4921148.jpg?quality=50">
+          <p>FASHION</p>
+          <P>Bunaai</P>
+        </div>
+      </div>
+
+      <div class="lg:text-3xl sm:text-2xl pl-14 my-20 sm:my-10 text-white">
+        <h2>
+          Take the best path forward
+        </h2>
+      </div>
+
+      <div
+        class="mid-part-2 lg:flex justify-around gap-5 lg:w-full sm:w-full lg:px-16 sm:px-16 lg:mt-16 text-white lg:pb-32 sm:pb-10">
+        <div class="lg:w-60 sm:w-96">
+          <img class="lg:w-1/3 sm:w-1/3 lg:pb-12 sm:pb-10" src="http://cdn.onlinewebfonts.com/svg/img_457955.png">
+          <p class="lg:pb-4 lg:text-lg  sm:text-sm  font-semibold  ">Start an online business</p>
+          <P class="lg:text-md ">Create a business, whether you’ve got a fresh idea or are looking for a new way to make
+            money.</P>
+        </div>
+        <div class="lg:w-60  sm:w-96">
+          <img class="lg:w-1/3 sm:w-1/3 lg:pb-12 sm:pb-10" src="https://static.thenounproject.com/png/1080548-200.png">
+          <p class="lg:text-lg  sm:text-sm font-semibold">Move your business online</p>
+          <P class="lg:text-md sm:text-xs"></P>Turn your retail store into an online store and keep serving customers
+          without missing a
+          beat.</P>
+        </div>
+        <div class="lg:w-60 sm:w-96">
+          <img class="lg:w-1/3 sm:w-1/3 lg:pb-12 sm:pb-10 lg:mt-0 sm:mt-8"
+            src="https://riseblocks.lumavate.com/wp-content/themes/gutenbiz-child/assets/img/ib.png">
+          <p class="lg:pb-4 lg:text-lg  sm:text-sm font-semibold  ">Switch to Shopify</p>
+          <P class="lg:text-md sm:text-xs"></P> Bring your business to Shopify, no matter which ecommerce platform
+          you’re
+          currently
+          using.</P>
+        </div>
+        <div class="lg:w-60 sm:w-96">
+          <img class="lg:w-1/3 sm:w-1/3 lg:pb-12 sm:pb-10" src="http://simpleicon.com/wp-content/uploads/users.svg">
+          <p class="lg:pb-4 lg:text-lg  sm:text-sm font-semibold ">Hire a Shopify expert</p>
+          <P class="lg:text-md sm:text-xs"></P>Get set up with the help of a trusted freelancer or agency from the
+          Shopify
+          Experts
+          Marketplace.</P>
+        </div>
+
+      </div>
+    </section>
+
+ <!-- part-3-mid -->
+
+    <section>
+      <div class="text-center lg:my-20 sm:my-5">
+        <h1 class="lg:text-4xl sm:text-2xl pb-4">With you wherever you’re going</h1>
+        <p class="lg:text-xl sm:text-md text-gray-500">One platform with all the ecommerce and point of sale features
+          you
+          need <br> to
+          start, run, and grow your business.</p>
+      </div>
+      <div class="lg:flex lg:my-32 lg:mx-20 sm:mx-10 lg:gap-10">
+        <div class="video-container">
+          <video muted="muted" loop="loop" playsinline="playsinline" data-autoplay="true" data-lazyload="true"
+            data-poster="https://cdn.shopify.com/shopifycloud/brochure/assets/home/poster-sell-9a9415a0989001f51a3870a065e65b4cfaa5dbaa250288f60a7e5b6ba4f22394.jpg"
+            autoplay
+            poster="https://cdn.shopify.com/shopifycloud/brochure/assets/home/poster-sell-9a9415a0989001f51a3870a065e65b4cfaa5dbaa250288f60a7e5b6ba4f22394.jpg"
+            class="">==$0
+            <source
+              data-src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/sell-animation-desktop-1b186d853b04bce6dbc12bb63bd5bc4bc1ff60cd1a06fd12f85261c8acc66d0a.webm"
+              type="video/webm"
+              src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/sell-animation-desktop-1b186d853b04bce6dbc12bb63bd5bc4bc1ff60cd1a06fd12f85261c8acc66d0a.webm">
+            ==$0
+            <source
+              data-src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/sell-animation-desktop-e91e64db2d38816861b2eb3243eb9d8b28225f47269954d9f257cc850bb2f33a.mp4"
+              type="video/mp4"
+              src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/sell-animation-desktop-e91e64db2d38816861b2eb3243eb9d8b28225f47269954d9f257cc850bb2f33a.mp4">
+            ==$0
+          </video>
+        </div>
+        <div>
+          <h2 class="lg:text-3xl sm:text-2xl lg:pt-32 sm:pt-10 lg:pb-5 sm:pb-4">Sell everywhere</h2>
+          <p class="text-gray-500 pb-5 lg:text-lg sm:text-sm">Use one platform to sell products to anyone, anywhere—in
+            person with Point of Sale
+            and online through your website, social media, and online marketplaces.</p>
+          <p class="font-bold text-emerald-600 lg:text-lg sm:text-md">Explore ways to sell <span>&#8594;</span></p>
+        </div>
+      </div>
+    </section>
+
+<!-- part-4 -->
+
+    <section>
+      <div class="lg:flex lg:my-5 sm:my-10 lg:mx-20 sm:mx-10 lg:gap-10">
+        <div>
+          <h2 class="lg:text-3xl sm:text-2xl lg:pt-32 lg:pb-5 sm:pb-4">Market your business</h2>
+          <p class="text-gray-500 pb-5">Take the guesswork out of marketing with built-in tools that help you create,
+            execute, and analyze digital marketing campaigns.</p>
+          <p class="font-bold text-emerald-600 lg:text-lg sm:text-md pb-5">Explore how to market your business
+            <span>&#8594;</span>
+          </p>
+        </div>
+        <img class="lg:w-1/2 sm:w-72"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/market-large-213dc76dc5482456e02e34465bab786df62a6c07de2c9fcd4937a7b52813b56d.jpg?quality=50"
+          alt="">
+      </div>
+      </div>
+    </section>
+
+<!-- part-4 -->
+
+    <section>
+      <div class="lg:flex lg:my-10 sm:my-5 lg:mx-20 sm:mx-10 lg:gap-10 lg:pr-16">
+        <div>
+          <img class="lg:w-2/7 sm:hidden lg:pr-16"
+            src="https://res.cloudinary.com/littledata/w_1651,h_954,c_fit/littledata-blog-images/2019/02/overview-image-1ed060b7908ad65dbe4dbfb602a2f4293479dc3b8edab88ebf44ef5a661fe66e.png"
+            alt="">
+        </div>
+        <div>
+          <h2 class="lg:text-3xl sm:text-2xl pt-32 pb-5">Manage everything</h2>
+          <p class="text-gray-500 pb-5">Gain the insights you need to grow—use a single dashboard to manage orders,
+            shipping, and payments anywhere you go.</p>
+          <p class="font-bold text-emerald-600 text-lg">Explore how to manage your business <span>&#8594;</span></p>
+        </div>
+      </div>
+    </section>
+
+<!-- part-6 -->
+
+    <section class="bg-lime-50 lg:p-20 sm:p-5">
+      <h1 class="lg:text-3xl sm:text-2xl justify-around pb-8 ">Explore more from Shopify in India</h1>
+      <div class="lg:flex  bg-white">
+        <div class="mx-10">
+          <h4 class="my-4 font-bold">START</h4>
+          <h3 class="text-xl my-4">Launch your store with the help of a Shopify Expert</h3>
+          <p class="my-5">Find hundreds of experts from India ready to help you get your store up and running, from
+            choosing a theme to building a fully customized site.</p>
+          <p class="font-bold text-emerald-600 text-lg">Browse experts in India <span>&#8594;</span></p>
+        </div>
+        <div class="w-">
+          <img
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/card-collection/india-experts-large-e71ce2bf3f3cfb6b7688a41f7da482ff268a3a4964652abbc9bd5e5252f2839b.jpg?quality=50"
+            alt="">
+        </div>
+      </div>
+    </section>
+
+<!-- part-7 -->
+
+    <section>
+      <div class="lg:mx-20 sm:mx-10 lg:my-12 sm:my-5">
+        <h1 class="lg:text-3xl sm:text-2xl my-5">Empowering independent business<br>owners everywhere</h1>
+        <h2 class="lg:text-2xl sm:text-md my-5">Millions of businesses in 175 countries around the world have<br>made
+          over
+          $496 billion
+          USD in sales using Shopify.</h2>
+        <p class="font-bold text-emerald-600 text-md">Learn more about Shopify <span>&#8594;</span></p>
+        <video src=""></video>
+      </div>
+    </section>
+
+<!-- part-8 -->
+
+    <section class="bg-gray-50 lg:p-20">
+      <div class="lg:flex justify-around lg:my-5 ">
+        <div class="">
+          <img class="lg:w-2/7"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/merchants/alicia-souza/alicia-souza-testimonial@tablet-2x-bbaaa57e31fac90eaf6d71be0d076018bd4390eda8a5981e85538b1db715b193.jpg"
+            alt="">
+        </div>
+        <div class="w-2/7 flex flex-col bg-teal-900 text-center pl-24 pr-20 pt-10">
+          <p class="lg:text-2xl sm:text-md text-center text-white pb-4">“Shopify was my knight in shining armor when I
+            exhausted every
+            other possibility of getting my online store up and running.<br>It was stunningly easy to use, with more
+            features and plug-ins that I didn’t even know I wanted.”</p>
+          <img class="w-1/3 text-center relative left-40"
+            src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/testimonials/logo-alicia-souza-large-140eb3cca92ad104d99d48e364aa08b2caaec5501922eeb3916546718de63152.png?quality=50"
+            alt="">
+          <p class="text-white my-5">Alicia | Alicia Souza</p>
+        </div>
+      </div>
+
+ <!-- part-9 -->
+<!-- image in row -->
+
+      <div class="lg:flex sm:flex lg:justify-between sm:justify-around lg:my-12 sm:my-10">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/bajaao-large-90b80d8dca23c6010844c15073c5682e366e2a7cce83c3906023254ddc0f118f.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/johnjacobs-large-64648953616375e0c0cdf42f66d2dac5d5d42c1fd73c36479bbfadde18215515.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/kylie-large-cc52236a0d0155a055cdcb79674ed7d09e34dad57775fdacfcf5fe35a54573fe.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/nush-large-700def69c5dedebecfbd66e65596eb777f090ed413fe4bade3f8547524c9b6c0.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/yogabar-large-5e1859ae4c2493c4b21db6bd0029982f0ed35a632bdb24f9bacca6d553341986.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/starstruck-large-f1878004d9a8b2965ddda61f9860c542fe63c6bbd4f9b9674894f4c34ecc05ae.png?quality=50"
+          alt="">
+        <img class="lg:w-20 sm:w-10"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/logo-soup/mcaffeine-large-58ebe816c20a443da0ce4d32256d4b1e48ec46cae26cb7a2b0f595ea91fdd795.png?quality=50"
+          alt="">
+      </div>
+    </section>
+
+ <!-- part-10 -->
+    <section class="bg-orange-50">
+      <div class="lg:flex lg:ml-20 sm:ml-10 lg:my-0 sm:my-10">
+        <div class="lg:flex sm:flex lg:flex-col sm:flex-col-reverse lg:justify-around">
+          <div>
+            <h1 class="lg:text-5xl sm:text-2xl">Get the help you need, every<br> step of the way</h1>
+          </div>
+          <div class="lg:flex lg:gap-5 lg:pr-10 lg:p-10 sm:p-10">
+            <div>
+              <h2 class="lg:text-2xl sm:text-xl font-medium"> Shopify support
+              </h2>
+              <p class="lg:text-lg sm:text-md text-gray-500 my-5">Contact support 24/7, whether you’re troubleshooting
+                issues or looking
+                for business advice.</p>
+              <p class="font-bold text-emerald-600 text-md">Contact support <span>&#8594;</span></p>
+            </div>
+            <div>
+              <h2 class="lg:text-2xl sm:text-xl font-medium"> Shopify App Store
+              </h2>
+              <p class="text-lg text-gray-500 my-5">Add features and functionality to your business with 6,000+ apps
+                that
+                integrate directly with Shopify.</p>
+              <p class="font-bold text-emerald-600 text-md">Visit the Shopify App Store <span>&#8594;</span></p>
+            </div>
+          </div>
+          <div class="lg:w-1/2 sm:w-42">
+            <h2 class="lg:text-2xl sm:text-xl font-medium"> Shopify Experts Marketplace
+            </h2>
+            <p class="lg:text-lg sm:text-md text-gray-500 my-5">Hire a Shopify expert to help you with everything from
+              store setup to
+              SEO.</p>
+            <p class="font-bold text-emerald-600 text-md">Explore the shopify experts Marketplace <span>&#8594;</span>
+            </p>
+          </div>
+        </div>
+        <img class="lg:w-1/2 sm:w-40"
+          src="https://cdn.shopify.com/shopifycloud/brochure/assets/home/help@tablet-2x-bf2d10d538d0c91b9dd9c41bc8d69e6171fb9495fab3e2613095e476399f3798.jpg"
+          alt="">
+      </div>
+    </section>
+
+
+<!-- part-11 -->
+
+    <section>
+      <div class="text-center my-16">
+        <h1 class="lg:text-4xl sm:text-2xl">Start your business journey with Shopify
+        </h1>
+        <h2 class="lg:text-xl sm:text-sm text-gray-500 lg:my-8 sm:my-5 sm:mx-10">Try Shopify for free, and explore all
+          the
+          tools and services you need to
+          start, run, and grow your business.</h2>
+        <div class="sm:mx-32">
+          <button @click="open = !open"
+            class="flex items-center  px-6 py-4 mt-2 text-md font-semibold text-left bg-emerald-600 rounded-lg text-white font-bold dark-mode:hover:bg-emerald-900 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-white  ">
+            <span>Start Free Trail</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+ <!-- part-12 -->
+<!-- footer -->
+
+    <section class="bg-bgccolor text-white ">
+      <div class="lg:flex sm:flex lg:mx-20 sm:mx-5 lg:pt-10 sm:pt-10 lg:gap-10 sm:gap-4 lg:text-lg sm:text-sm">
+        <a>About</a>
+        <a>Careers</a>
+        <a>Press and Media</a>
+        <a>Shopify Plus</a>
+        <a>Sitemap</a>
+      </div>
+      <div class="lg:flex sm:flex sm:flex-wrap sm:justify-around lg:justify-around lg:mx-20 sm:mx-10 lg:py-16 sm:py-10">
+
+        <div>
+          <h1 class="text-lg font-semibold mb-5">Online store</h1>
+          <p class="text-gray-500">Sell online</p>
+          <p class="text-gray-500">Features</p>
+          <p class="text-gray-500">Examples</p>
+          <p class="text-gray-500">Website builder</p>
+          <p class="text-gray-500">Online retail</p>
+        </div>
+        <div>
+          <p class="text-gray-500">Ecommerce website</p>
+          <p class="text-gray-500">Domain names</p>
+          <p class="text-gray-500">Themes</p>
+          <p class="text-gray-500">Shopping cart</p>
+          <p class="text-gray-500">Ecommerce Website</p>
+        </div>
+        <div>
+          <p class="text-gray-500">Ecommerce software</p>
+          <p class="text-gray-500">Online store</p>
+          <p class="text-gray-500">Dropshipping business</p>
+          <p class="text-gray-500">Store themes</p>
+        </div>
+        <div>
+          <h1 class="text-lg font-semibold  mb-5">Point of sale</h1>
+          <p class="text-gray-500">Point of sale</p>
+          <p class="text-gray-500">Features</p>
+        </div>
+        <div class="sm:m-5">
+          <h1 class="text-lg font-semibold mb-5">Support</h1>
+          <p class="text-gray-500">24/7</p>
+          <p class="text-gray-500">Shopify help center</p>
+          <p class="text-gray-500">Shopify Community</p>
+          <p class="text-gray-500">API documentaion </p>
+          <p class="text-gray-500">Free tools</p>
+          <p class="text-gray-500">free stock photos</p>
+          <p class="text-gray-500">website for sale</p>
+          <p class="text-gray-500">logo maker</p>
+          <p class="text-gray-500">business name</p>
+          <p class="text-gray-500">research</p>
+          <p class="text-gray-500">Legal</p>
+        </div>
+        <div>
+          <p class="text-gray-500">Contact</p>
+          <p class="text-gray-500">Partner program</p>
+          <p class="text-gray-500">Affiliate program</p>
+          <p class="text-gray-500">App developers</p>
+          <p class="text-gray-500">Investors</p>
+          <p class="text-gray-500">Blog topics</p>
+          <p class="text-gray-500">Community Events</p>
+        </div>
+      </div>
+    </section>
+    
+</body>
+</html>
